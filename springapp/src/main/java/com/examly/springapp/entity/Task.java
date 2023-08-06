@@ -1,59 +1,68 @@
 package com.examly.springapp.entity;
 
-import java.util.*;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 @Entity
+@Table(name="mytasks")
 public class Task {
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	@Id
-    private long taskid;
-    private String taskholdername;
-    private Date taskdate;
-    private String taskName;
-    private String taskStatus;
-    public Task(long taskid,String taskholdername,Date taskdate,String taskName,String taskStatus)
-    {
-        super();
-        this.taskid=taskid;
-        this.taskholdername=taskholdername;
-        this.taskdate=taskdate;
-        this.taskName=taskName;
-        this.taskStatus=taskStatus;
-        
-    }
-    public Task()
-    {
-        super();
-    }
-	public long getTaskid() {
-		return taskid;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	@Column(name = "taskId")
+	private String taskId;
+	@Column(name = "taskHolderName")
+	private String taskHolderName;
+	@Column(name = "taskDate")
+	private String taskDate;
+	@Column(name = "taskName")
+	private String taskName;
+	@Column(name = "taskStatus")
+	private String taskStatus;
+	
+	
+	public Task() {
 	}
-	public void setTaskid(long taskid) {
-		this.taskid = taskid;
+	
+	public Task(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
+		super();
+		this.taskId = taskId;
+		this.taskHolderName = taskHolderName;
+		this.taskDate = taskDate;
+		this.taskName = taskName;
+		this.taskStatus = taskStatus;
 	}
-	public String getTaskholdername() {
-		return taskholdername;
+	public String getTaskId() {
+		return taskId;
 	}
-	public void setTaskholdername(String taskholdername) {
-		this.taskholdername = taskholdername;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
-	public Date getTaskdate() {
-		return taskdate;
+	public String getTaskHolderName() {
+		return taskHolderName;
 	}
-	public void setTaskdate(Date taskdate) {
-		this.taskdate = taskdate;
+	public void setTaskHolderName(String taskHolderName) {
+		this.taskHolderName = taskHolderName;
+	}
+	public String getTaskDate() {
+		return taskDate;
+	}
+	public void setTaskDate(String taskDate) {
+		this.taskDate = taskDate;
 	}
 	public String getTaskName() {
 		return taskName;
 	}
 	public void setTaskName(String taskName) {
 		this.taskName = taskName;
-	}
-	@Override
-	public String toString() {
-		return "Task [taskid=" + taskid + ", taskholdername=" + taskholdername + ", taskdate=" + taskdate
-				+ ", taskName=" + taskName + ", taskStatus=" + taskStatus + "]";
 	}
 	public String getTaskStatus() {
 		return taskStatus;
