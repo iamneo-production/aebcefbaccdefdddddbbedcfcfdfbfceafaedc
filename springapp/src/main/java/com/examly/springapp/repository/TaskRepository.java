@@ -7,5 +7,5 @@ import com.examly.springapp.entity.Task;
 @Repository
 public interface TaskRepository extends JpaRepository<Task,Long> {
     Task findByTaskId(String taskId);   
-    {console.log("this is called");}
+    
 }
