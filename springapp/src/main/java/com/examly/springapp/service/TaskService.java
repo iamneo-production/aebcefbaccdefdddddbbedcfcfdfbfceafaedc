@@ -50,7 +50,6 @@ public class TaskService {
 	}
 	public List<Task> getAllTasks(){
 		
-		System.out.println("this is called");
-		return taskRepo.findAll();
+	
 	}
 }
