@@ -14,7 +14,7 @@ public class TaskService {
 
 	@Autowired
 	public TaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
+        this.taskRepo = taskRepository;
     }
 //	public List<Task> getAllTasks()
 //	{
