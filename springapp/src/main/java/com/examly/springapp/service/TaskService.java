@@ -14,7 +14,7 @@ public class TaskService {
 
 	@Autowired
 	public TaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
+        this.taskRepo = taskRepository;
     }
 //	public List<Task> getAllTasks()
 //	{
@@ -49,6 +49,8 @@ public class TaskService {
 		return taskRepo.save(task);
 	}
 	public List<Task> getAllTasks(){
+		
+		System.out.println("this is called");
 		return taskRepo.findAll();
 	}
 }
